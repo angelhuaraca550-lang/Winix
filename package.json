@@ -1,0 +1,11 @@
+{
+  "name": "fideliza",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Fideliza — tarjetas de fidelidad digitales para negocios locales",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.8",
+    "web-push": "^4.0.0"
+  }
+}

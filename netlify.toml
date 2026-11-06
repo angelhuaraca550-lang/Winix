@@ -1,0 +1,46 @@
+# Fideliza — configuración para Netlify (no hay que tocar nada)
+[build]
+  publish = "public"
+  command = "echo 'Fideliza listo'"
+
+[functions]
+  directory = "netlify/functions"
+
+# Páginas de la app
+[[redirects]]
+  from = "/unirse/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/tarjeta/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/negocio/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/acceso"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/dueno"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(self), geolocation=(self)"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
